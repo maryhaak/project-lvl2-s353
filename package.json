@@ -1,10 +1,10 @@
 {
     "name": "hexlet-project-lvl2-mh",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "frontend learning project 2 by hexlet",
     "main": "index.js",
     "bin": {
-        "diff-calc": "dist/bin/diff-calc.js"
+        "gendiff": "dist/bin/gendiff.js"
     },
     "files": [
         "dist"
@@ -35,5 +35,8 @@
         "eslint-config-airbnb-base": "^13.1.0",
         "eslint-plugin-import": "^2.14.0",
         "hexlet-project-lvl1-mh": "^3.4.1"
+    },
+    "dependencies": {
+        "commander": "^2.19.0"
     }
 }
