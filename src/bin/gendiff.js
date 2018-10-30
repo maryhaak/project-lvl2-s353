@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import generator from './generator';
+import * as commander from 'commander';
 
-const initGendiff = () => {    
-    const program = require('commander');
-
+const initGendiff = () => {
     program
         .version('1.0.5')
         .usage('[options] <firstConfig> <secondConfig>')
