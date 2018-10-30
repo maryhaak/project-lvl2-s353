@@ -9,3 +9,6 @@ publish:
 
 lint:
 	npm run eslint .
+
+test:
+	yarn test
