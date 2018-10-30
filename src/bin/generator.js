@@ -2,9 +2,14 @@ import * as fs from 'fs';
 
 export default (firstConfig, secondConfig) => {
     const path = require("path");
-    const beforePath = path.resolve(__dirname, firstConfig);    
+    const beforeData = readFile(path.resolve(__dirname, firstConfig));
+    const afterData = readFile(path.resolve(__dirname, secondConfig));
+    return afterData;
+};
 
-    const beforeData = fs.readFileSync(beforePath, 'utf8', function(err, data) {
+
+const readFile = (path) => {
+    return fs.readFileSync(path, 'utf8', function(err, data) {
         if(err) {
             if(err.code == 'ENOENT') {
                 console.error(err.message);
@@ -15,6 +20,4 @@ export default (firstConfig, secondConfig) => {
             console.log(data);
         }
     });
-
-    return beforeData;
-};
+}
