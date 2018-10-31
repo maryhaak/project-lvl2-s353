@@ -1,3 +1,4 @@
+import * as commander from 'commander';
 import * as fs from 'fs';
 import * as path from 'path';
 import has from 'lodash/has';
@@ -56,7 +57,8 @@ const readFile = (config) => {
   });
 };
 
-export default (firstConfig, secondConfig) => {
+
+const generator = (firstConfig, secondConfig) => {
   const beforeData = readFile(firstConfig);
   const afterData = readFile(secondConfig);
   const beforeObj = JSON.parse(beforeData);
@@ -67,3 +69,20 @@ export default (firstConfig, secondConfig) => {
   console.log(res);
   return res;
 };
+
+
+export const initGendiff = () => {
+  const program = new commander.Command();
+
+  program
+    .version('1.0.5')
+    .usage('[options] <firstConfig> <secondConfig>')
+    .description('Compares two configuration files and shows a difference.')
+    .option('-f, --format [type]', 'Output format')
+    .action(generator);
+
+  program.parse(process.argv);
+};
+
+
+export default generator;
