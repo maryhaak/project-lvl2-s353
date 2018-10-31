@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import * as commander from 'commander';
-// import generator from './generator';
 import * as fs from 'fs';
 import * as path from 'path';
 import has from 'lodash/has';
