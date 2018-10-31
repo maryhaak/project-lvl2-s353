@@ -1,47 +1,50 @@
 {
-    "name": "hexlet-project-lvl2-mh",
-    "version": "1.0.7",
-    "description": "frontend learning project 2 by hexlet",
-    "main": "index.js",
-    "bin": {
-        "gendiff": "dist/bin/gendiff.js"
-    },
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "babel-node": "babel-node",
-        "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-        "prepublishOnly": "npm run build",
-        "eslint": "eslint",
-        "test": "jest"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/maryhaak/project-lvl2-s353.git"
-    },
-    "author": "maryhaak",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/maryhaak/project-lvl2-s353/issues"
-    },
-    "homepage": "https://github.com/maryhaak/project-lvl2-s353#readme",
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^10.0.1",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-stage-0": "^6.24.1",
-        "eslint": "^5.8.0",
-        "eslint-config-airbnb-base": "^13.1.0",
-        "eslint-plugin-import": "^2.14.0",
-        "hexlet-project-lvl1-mh": "^3.4.1",
-        "jest": "^23.6.0"
-    },
-    "dependencies": {
-        "commander": "^2.19.0",
-        "eslint-plugin-babel": "^5.2.1",
-        "eslint-plugin-jest": "^21.26.2",
-        "lodash": "^4.17.11"
-    }
+  "name": "hexlet-project-lvl2-mh",
+  "version": "1.0.7",
+  "description": "frontend learning project 2 by hexlet",
+  "main": "index.js",
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build",
+    "eslint": "eslint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryhaak/project-lvl2-s353.git"
+  },
+  "author": "maryhaak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maryhaak/project-lvl2-s353/issues"
+  },
+  "homepage": "https://github.com/maryhaak/project-lvl2-s353#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "hexlet-project-lvl1-mh": "^3.4.1",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-jest": "^21.26.2",
+    "lodash": "^4.17.11"
+  }
 }
