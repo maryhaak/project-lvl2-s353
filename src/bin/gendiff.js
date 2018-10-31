@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import {initGendiff} from '..';
+import { initGendiff } from '..';
 
 initGendiff();
