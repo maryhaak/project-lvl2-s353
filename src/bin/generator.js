@@ -10,13 +10,16 @@ const buildResStr = (arr) => {
 
 const parse = (beforeObj, afterObj) => {
   const diffArr = [];
-  Object.keys(beforeObj).forEach(function(key){
-    const beforeLineObj = { 'key': key, 'val': beforeObj[key] };
+  const beforeKeysArr = Object.keys(beforeObj);
+  const afterKeysArr = Object.keys(afterObj);
+  for (let i = 0; i < beforeKeysArr.length; i += 1) {
+    const key = beforeKeysArr[i];
+    const beforeLineObj = { key, val: beforeObj[key] };
     if (has(afterObj, key)) {
       if (afterObj[key] === beforeObj[key]) {
         beforeLineObj.state = '  ';
       } else {
-        const afterLineObj = { 'key': key, 'val': afterObj[key] };
+        const afterLineObj = { key, val: afterObj[key] };
         afterLineObj.state = '+ ';
         diffArr.push(afterLineObj);
         beforeLineObj.state = '- ';
@@ -25,21 +28,22 @@ const parse = (beforeObj, afterObj) => {
       beforeLineObj.state = '- ';
     }
     diffArr.push(beforeLineObj);
-  });
-  
-  Object.keys(afterObj).forEach(function(key){
+  }
+  for (let i = 0; i < afterKeysArr.length; i += 1) {
+    const key = afterKeysArr[i];
     if (!has(beforeObj, key)) {
-      const afterLineObj = { 'key': key, 'val': afterObj[key] };
+      const afterLineObj = { key, val: afterObj[key] };
       afterLineObj.state = '+ ';
       diffArr.push(afterLineObj);
     }
-  });
+  }
   return diffArr;
-}
+};
 
 
-const readFile = (path) =>
-  fs.readFileSync(path, 'utf8', function (err, data) {
+const readFile = (config) => {
+  const configPath = path.resolve(__dirname, config);
+  return fs.readFileSync(configPath, 'utf8', (err, data) => {
     if (err) {
       if (err.code === 'ENOENT') {
         console.error(err.message);
@@ -50,10 +54,11 @@ const readFile = (path) =>
       console.log(data);
     }
   });
+};
 
 export default (firstConfig, secondConfig) => {
-  const beforeData = readFile(path.resolve(__dirname, firstConfig));
-  const afterData = readFile(path.resolve(__dirname, secondConfig));
+  const beforeData = readFile(firstConfig);
+  const afterData = readFile(secondConfig);
   const beforeObj = JSON.parse(beforeData);
   const afterObj = JSON.parse(afterData);
 
