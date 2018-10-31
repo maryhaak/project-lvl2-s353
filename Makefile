@@ -11,4 +11,4 @@ lint:
 	npm run eslint .
 
 test:
-	yarn test
+	npm test
