@@ -38,7 +38,5 @@ export default (firstConfig, secondConfig) => {
   const propsStr = resArr.reduce((acc, item) => `${acc}\n${item.prefix}${item.key}: ${item.val}`, '');
   const res = `{${propsStr}\n}\n`;
 
-  console.log('RESULT:');
-  console.log(res);
   return res;
 };
