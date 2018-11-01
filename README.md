@@ -3,4 +3,5 @@
 [![Build Status](https://travis-ci.org/maryhaak/project-lvl2-s353.svg?branch=master)](https://travis-ci.org/maryhaak/project-lvl2-s353)
 
 [Пример установки и работы пакета #1](https://asciinema.org/a/8c3fiOj36y0LYzVEyKjpfvBaZ)  
-[Пример установки и работы пакета #2](https://asciinema.org/a/XBC1fyDVCW5bcymVVyQSyBdfR)
+[Пример установки и работы пакета #2](https://asciinema.org/a/XBC1fyDVCW5bcymVVyQSyBdfR)  
+[Пример установки и работы пакета #3](https://asciinema.org/a/T2xzFgcSQddxoXZxL14dVz7Pq)
