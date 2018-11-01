@@ -1,6 +1,6 @@
 {
   "name": "hexlet-project-lvl2-mh",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "frontend learning project 2 by hexlet",
   "main": "index.js",
   "bin": {
