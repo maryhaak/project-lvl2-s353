@@ -1,11 +1,24 @@
+import fs from 'fs';
+import path from 'path';
 import { _, has } from 'lodash';
-import parseFile from './parsers';
+import parseFileData from './parsers';
+
 
 const getKeyDiffStr = ({ key, values }) => values.reduce((acc, item) => `${acc}\n${item.prefix}${key}: ${item.value}`, '');
 
+
+const readFile = (fileName) => {
+  const pathAbsolute = path.isAbsolute(fileName) ? fileName : path.resolve(__dirname, fileName);
+  return {
+    str: fs.readFileSync(pathAbsolute, 'utf8'),
+    type: path.extname(fileName),
+  };
+};
+
+
 export default (path1, path2) => {
-  const obj1 = parseFile(path1);
-  const obj2 = parseFile(path2);
+  const obj1 = parseFileData(readFile(path1));
+  const obj2 = parseFileData(readFile(path2));
   const keysArr = _.uniq(Object.keys(obj1).concat(Object.keys(obj2)));
 
   const keysObjects = keysArr.map((key) => {

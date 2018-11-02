@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import yaml from 'js-yaml';
 
 const mapping = {
@@ -7,8 +5,4 @@ const mapping = {
   '.yml': str => yaml.safeLoad(str),
 };
 
-export default (fileName) => {
-  const pathAbsolute = path.isAbsolute(fileName) ? fileName : path.resolve(__dirname, fileName);
-  const str = fs.readFileSync(pathAbsolute, 'utf8');
-  return mapping[path.extname(fileName)](str);
-};
+export default ({ str, type }) => mapping[type](str);
