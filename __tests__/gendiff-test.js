@@ -11,3 +11,8 @@ test('yaml test', () => {
   const expected = fs.readFileSync(path.resolve(__dirname, './__fixtures__/test-diff-yml.txt'), 'utf8');
   expect(generateDiff('../__tests__/__fixtures__/before.yml', '../__tests__/__fixtures__/after.yml')).toBe(expected);
 });
+
+test('ini test', () => {
+  const expected = fs.readFileSync(path.resolve(__dirname, './__fixtures__/test-diff-ini.txt'), 'utf8');
+  expect(generateDiff('../__tests__/__fixtures__/before.ini', '../__tests__/__fixtures__/after.ini')).toBe(expected);
+});
