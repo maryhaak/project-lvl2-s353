@@ -1,8 +1,8 @@
 import yaml from 'js-yaml';
 
 const mapping = {
-  '.json': str => JSON.parse(str),
-  '.yml': str => yaml.safeLoad(str),
+  '.json': JSON.parse,
+  '.yml': yaml.safeLoad,
 };
 
-export default ({ str, type }) => mapping[type](str);
+export default (str, type) => mapping[type](str);
