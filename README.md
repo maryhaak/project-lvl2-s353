@@ -5,5 +5,5 @@
 Пример установки и работы пакета
 [шаг #1](https://asciinema.org/a/8c3fiOj36y0LYzVEyKjpfvBaZ)  
 [шаг #2](https://asciinema.org/a/XBC1fyDVCW5bcymVVyQSyBdfR)  
-[шаг #3](https://asciinema.org/a/T2xzFgcSQddxoXZxL14dVz7Pq)
-[шаг #4](https://asciinema.org/a/eF5mSLYKVUQ3psDIPFJwuB7PS)
+[шаг #3](https://asciinema.org/a/T2xzFgcSQddxoXZxL14dVz7Pq)  
+[шаг #4](https://asciinema.org/a/eF5mSLYKVUQ3psDIPFJwuB7PS)  
