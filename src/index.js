@@ -1,10 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { _, has } from 'lodash';
-import parseFileData from './parsers';
+import getFileDataAsObj from './parsers';
 
 
-const getKeyDiffStr = ({ key, values }) => values.reduce((acc, item) => `${acc}\n${item.prefix}${key}: ${item.value}`, '');
+const getKeyDiffStr = ({ key, values }) => values.reduce((acc, item) => (item !== null
+  ? `${acc}\n${item.prefix}${key}: ${item.value}`
+  : acc), '');
 
 
 const readFile = (fileName) => {
@@ -21,19 +23,18 @@ const getPrefix = (key, value, obj1, obj2) => {
 };
 
 
+const getValueData = (key, curObj, obj1, obj2) => (has(curObj, key)
+  ? { value: curObj[key], prefix: getPrefix(key, curObj[key], obj1, obj2) }
+  : null);
+
+
 export default (path1, path2) => {
-  const obj1 = parseFileData(readFile(path1), path.extname(path1));
-  const obj2 = parseFileData(readFile(path2), path.extname(path2));
+  const obj1 = getFileDataAsObj(readFile(path1), path.extname(path1));
+  const obj2 = getFileDataAsObj(readFile(path2), path.extname(path2));
   const keysArr = _.uniq(Object.keys(obj1).concat(Object.keys(obj2)));
 
   const keysObjects = keysArr.map((key) => {
-    const values = [];
-    if (has(obj1, key)) {
-      values.push({ value: obj1[key], prefix: getPrefix(key, obj1[key], obj1, obj2) });
-    }
-    if (has(obj2, key)) {
-      values.push({ value: obj2[key], prefix: getPrefix(key, obj2[key], obj1, obj2) });
-    }
+    const values = [getValueData(key, obj1, obj1, obj2), getValueData(key, obj2, obj1, obj2)];
     return { key, values: _.uniqBy(values, 'value') };
   });
 
