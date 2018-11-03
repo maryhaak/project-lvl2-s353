@@ -10,9 +10,9 @@ program
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'Output format')
   .action((firstConfig, secondConfig) => {
-    const normalizePath = (curPath) => path.isAbsolute(curPath)
+    const normalizePath = curPath => (path.isAbsolute(curPath)
       ? curPath
-      : path.resolve(process.cwd(), curPath);
+      : path.resolve(process.cwd(), curPath));
     console.log(generateDiff(normalizePath(firstConfig), normalizePath(secondConfig)));
   });
 program.parse(process.argv);
