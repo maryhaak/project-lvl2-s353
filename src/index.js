@@ -2,42 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { _, has } from 'lodash';
 import getFileDataAsObj from './parsers';
-
-
-const prefixes = {
-  added: '+ ',
-  removed: '- ',
-  unchanged: '  ',
-  tab: '    ',
-  indent: '  ',
-};
-
-
-const stringify = (obj, indent) => Object.keys(obj).reduce((acc, key) => `${acc}${indent}${prefixes.indent}${key}: ${obj[key]}\n`, '');
-
-
-const render = (data, depth = 0) => {
-  const getValStr = value => (_.isObject(value) ? render(value, depth + 1) : value);
-  const indent = prefixes.tab.repeat(depth);
-
-  const keysStr = _.isArray(data)
-    ? data.reduce((acc, item) => {
-      const {
-        key,
-        status,
-      } = item;
-
-      const keyDiff = status === 'changed'
-        ? `${indent}${prefixes.removed}${key}: ${getValStr(item.val1)}\n${indent}${prefixes.added}${key}: ${getValStr(item.val2)}\n`
-        : `${indent}${status ? prefixes[status] : prefixes.indent}${key}: ${getValStr(item.value)}\n`;
-
-      return `${acc}${keyDiff}`;
-    }, '')
-    : stringify(data, indent);
-
-  const closingBracketIndent = depth > 0 ? `${prefixes.indent}${prefixes.tab.repeat(depth - 1)}` : '';
-  return `{\n${keysStr}${closingBracketIndent}}`;
-};
+import render from './render';
 
 
 const diffStatuses = [
@@ -89,8 +54,8 @@ const parse = (obj1, obj2) => {
 };
 
 
-export default (path1, path2) => {
+export default (path1, path2, renderType) => {
   const obj1 = getFileDataAsObj(fs.readFileSync(path1, 'utf8'), path.extname(path1));
   const obj2 = getFileDataAsObj(fs.readFileSync(path2, 'utf8'), path.extname(path2));
-  return `${render(parse(obj1, obj2))}\n`;
+  return `${render(parse(obj1, obj2), renderType)}`;
 };

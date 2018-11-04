@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import commander from 'commander';
 import path from 'path';
-import generateDiff from '..';
+import genDiff from '..';
 
 const program = new commander.Command();
 program
@@ -13,6 +13,6 @@ program
     const normalizePath = curPath => (path.isAbsolute(curPath)
       ? curPath
       : path.resolve(process.cwd(), curPath));
-    console.log(generateDiff(normalizePath(firstConfig), normalizePath(secondConfig)));
+    console.log(genDiff(normalizePath(firstConfig), normalizePath(secondConfig), program.format));
   });
 program.parse(process.argv);

@@ -9,9 +9,9 @@
     + color: green
       size: 10
   }
-- status: {
++ verbose: true
++ status: {
       cool: yes
       super: yes
   }
-+ verbose: true
 }

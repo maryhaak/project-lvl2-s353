@@ -5,3 +5,6 @@ host: hexlet.io
 props:
   color: green
   size: 10
+status:
+  cool: yes
+  super: yes

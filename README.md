@@ -9,3 +9,4 @@
 [шаг #3](https://asciinema.org/a/T2xzFgcSQddxoXZxL14dVz7Pq)  
 [шаг #4](https://asciinema.org/a/eF5mSLYKVUQ3psDIPFJwuB7PS)  
 [шаг #5](https://asciinema.org/a/ouZE8KX4zrt1tqGdsptvOoEKG)
+[шаг #6](https://asciinema.org/a/vLZleRlEXWTsKlJBDLKiBoNMw)

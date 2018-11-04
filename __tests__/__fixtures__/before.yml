@@ -6,6 +6,3 @@ follow: false
 props:
   color: red
   size: 10
-status:
-  cool: yes
-  super: yes
