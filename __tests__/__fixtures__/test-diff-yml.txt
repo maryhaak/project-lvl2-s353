@@ -4,5 +4,14 @@
 + timeout: 10
 - proxy: 123.234.53.22
 - follow: false
+  props: {
+    - color: red
+    + color: green
+      size: 10
+  }
+- status: {
+      cool: yes
+      super: yes
+  }
 + verbose: true
 }

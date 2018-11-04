@@ -3,3 +3,9 @@ host: hexlet.io
 timeout: 1000
 proxy: 123.234.53.22
 follow: false
+props:
+  color: red
+  size: 10
+status:
+  cool: yes
+  super: yes

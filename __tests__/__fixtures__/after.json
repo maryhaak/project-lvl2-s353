@@ -1,5 +1,15 @@
 {
   "timeout": 20,
   "verbose": true,
-  "host": "hexlet.io"
+  "host": "hexlet.io",
+  "props": {
+    "color": "blue",
+    "size": 10
+  },
+  "settings": {    
+    "view": {
+      "size": "default",
+      "orientation": "vertical"
+    }
+  }
 }

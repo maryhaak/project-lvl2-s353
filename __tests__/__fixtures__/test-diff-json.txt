@@ -4,5 +4,18 @@
 + timeout: 20
 - proxy: 123.234.53.22
 - follow: false
+  props: {
+    - color: red
+    + color: blue
+      size: 10
+  }
+  settings: {
+    - sound: off
+      view: {
+        - size: large
+        + size: default
+          orientation: vertical
+      }
+  }
 + verbose: true
 }

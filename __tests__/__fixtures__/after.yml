@@ -2,3 +2,6 @@
 timeout: 10
 verbose: true
 host: hexlet.io
+props:
+  color: green
+  size: 10
