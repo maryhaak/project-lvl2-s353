@@ -37,7 +37,7 @@ const render = (data, depth = 0) => {
 };
 
 
-const getValueText = val => (_.isObject(val) ? '[complex value]' : val);
+const getValueText = val => (_.isObject(val) ? `[complex value]${renderPlain(value)}` : val);
 
 
 const diffTexts = {
@@ -48,10 +48,11 @@ const diffTexts = {
 };
 
 
+
 const renderPlain = data => data.reduce((acc, item) => {
   const {
     key,
-    status,
+    status
   } = item;
 
   return `${acc}${diffTexts[status](key, item)}`;
@@ -61,6 +62,8 @@ const renderPlain = data => data.reduce((acc, item) => {
 export default (data, type) => {
   if (type === 'plain') {
     return renderPlain(data);
+  } else if (type === 'json') {
+    return JSON.stringify(data);
   }
   return `${render(data)}\n`;
 };

@@ -18,6 +18,6 @@ test('ini test', () => {
 });
 
 test('yaml test, plain render', () => {
-  const expected = fs.readFileSync(path.resolve(__dirname, '__fixtures__/test-diff-yml-plain.txt'), 'utf8');
+  const expected = fs.readFileSync(path.resolve(__dirname, '__fixtures__/test-diff-yml_plain-res.txt'), 'utf8');
   expect(generateDiff('__tests__/__fixtures__/before.yml', '__tests__/__fixtures__/after.yml', 'plain')).toBe(expected);
 });

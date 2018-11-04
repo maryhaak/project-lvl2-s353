@@ -1,5 +1,6 @@
 Property timeout was updated. From 1000 to 10
 Property proxy was removed
 Property follow was removed
+Property props.color was updated. From red to green 
 Property verbose was added with value: true
 Property status was added with value: [complex value]

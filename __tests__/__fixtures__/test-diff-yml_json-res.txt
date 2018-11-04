@@ -1,0 +1,11 @@
+[ { key: 'host', status: 'unchanged', value: 'hexlet.io' },
+  { key: 'timeout', status: 'changed', val1: 1000, val2: 10 },
+  { key: 'proxy', status: 'removed', value: '123.234.53.22' },
+  { key: 'follow', status: 'removed', value: false },
+  { key: 'props',
+    status: 'unchanged',
+    value: [ {}, {} ]} },
+  { key: 'verbose', status: 'added', value: true },
+  { key: 'status',
+    status: 'added',
+    value: { cool: 'yes', super: 'yes' } } ]
